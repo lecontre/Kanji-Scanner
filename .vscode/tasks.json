@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Expo App",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "start"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Start Backend Server",
+      "type": "shell",
+      "command": "cd",
+      "args": [
+        "backend",
+        "&&",
+        "npm",
+        "run",
+        "server"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Start Full App (Frontend + Backend)",
+      "dependsOn": [
+        "Start Backend Server",
+        "Start Expo App"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
